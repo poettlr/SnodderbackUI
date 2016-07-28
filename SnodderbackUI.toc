@@ -1,0 +1,6 @@
+## Interface: 50400
+## Title: SnodderbackUI
+## Author: Snodderback
+## Version: 0.1
+## SavedVariablesPerCharacter: SnodderbackUI_Global,
+SnodderbackUI.xml

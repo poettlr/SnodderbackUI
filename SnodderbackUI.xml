@@ -1,0 +1,148 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\..\FrameXML\UI.xsd">
+	<Script file="SnodderbackUI.lua"/>
+	
+	<Frame name="SnodderbackUI_Debug_Virtual" virtual="true">
+		<Size x="100" y="32"/>
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="$parent_Label" inherits="GameFontNormal" justifyH="RIGHT" justifyV="CENTER" text="Test hallo wie gehts">
+					<Size x="250" y="32"/>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset x="0" y="0"/>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<EditBox name="$parent_Input" inherits="InputBoxTemplate" letters="5" autoFocus="false">
+				<Size x="50" y="32" />
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="260" y="0"/>
+					</Anchor>
+				</Anchors>
+				<FontString inherits="ChatFontNormal"/>
+			</EditBox>
+			<Button name="$parent_ButtonOK" inherits="UIPanelButtonTemplate" text="OK">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="320" y="-4"/>
+					</Anchor> 
+				</Anchors>
+				<Scripts>
+					<OnClick> 
+						SnodderbackUI_Config_Generic_Ok_Handler(self,button,down); 
+					</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+	
+	<Frame name="SnodderbackUI_Frame" hidden="true" parent="UIParent">
+		<Scripts>
+			<OnLoad function="SnodderbackUI_OnLoad"/>
+			<OnEvent function="SnodderbackUI_OnEvent"/>
+		</Scripts>
+	</Frame>
+	
+	<Frame name="SnodderbackUI_ConfigFrame" hidden="true" parent="UIParent" parentKey="Snodderback_Config_Key">
+		<Scripts>
+			<OnLoad function="SnodderbackUI_Config_OnLoad"/>
+			<OnShow function="SnodderbackUI_Config_OnShow"/>
+		</Scripts>
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="$parent_Title" inherits="GameFontNormalLarge" justifyH="CENTER" text="Snodderback UI Configuration">
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset y="-15"/>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<CheckButton name="SnodderbackUI_ConfigFrame_PlayerClassPortrait" inherits="OptionsCheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="10" y="-40"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick function="SnodderbackUI_ConfigFrame_PlayerClassPortrait_OnClick"/>
+				</Scripts>
+			</CheckButton>
+			<CheckButton name="$parent_TargetClassPortrait" inherits="OptionsCheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="10" y="-60"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick function="SnodderbackUI_ConfigFrame_TargetClassPortrait_OnClick"/>
+				</Scripts>
+			</CheckButton>			
+			<Frame name="SnodderbackUI_ConfigFrame_PlayerX" inherits="SnodderbackUI_Debug_Virtual">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="10" y="-80"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="SnodderbackUI_ConfigFrame_PlayerY" inherits="SnodderbackUI_Debug_Virtual">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="10" y="-100"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="SnodderbackUI_ConfigFrame_PlayerScale" inherits="SnodderbackUI_Debug_Virtual">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="10" y="-120"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="SnodderbackUI_ConfigFrame_TargetX" inherits="SnodderbackUI_Debug_Virtual">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="10" y="-140"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="SnodderbackUI_ConfigFrame_TargetY" inherits="SnodderbackUI_Debug_Virtual">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="10" y="-160"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="SnodderbackUI_ConfigFrame_TargetScale" inherits="SnodderbackUI_Debug_Virtual">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="10" y="-180"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+		</Frames>
+	</Frame>	
+</Ui>
